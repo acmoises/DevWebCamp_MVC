@@ -4,9 +4,9 @@
             <h3 class="footer__logo">
                     &#60;DevWebCamp />
             </h3>
-            <a href="" class="footer__texto">
+            <p class="footer__texto">
                 DevWebCamp es una conferencia para desarrolladores de todos los niveles, se lleva a cabo de forma presencial y en línea.
-            </a>
+            </p>
         </div>
         
         <nav class="menu-redes"> 
@@ -31,10 +31,10 @@
         </nav>
 
     </div>
-    <a href="" class="footer__copyright">
+    <p class="footer__copyright">
         DevWebCamp
-        <span class="footer_copyright--regular">
+        <span class="footer__copyright--regular">
             - Todos los derechos reservados <?php echo date('Y'); ?>
         </span>
-    </a>
+    </p>
 </footer>

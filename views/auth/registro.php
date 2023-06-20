@@ -55,7 +55,7 @@
         <div class="formulario__campo">
             <label for="password2" class="formulario__label">Repetir Password</label>
             <input 
-                type="password2"
+                type="password"
                 class="formulario__input"
                 placeholder="Repetir Password"
                 id="password2"

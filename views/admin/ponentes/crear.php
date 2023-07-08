@@ -16,7 +16,7 @@
 
         <?php include_once __DIR__ . '/formulario.php'; ?>
 
-        <input class="formulario__submit" type="submit" value="Registrar Ponente">
+        <input class="formulario__submit formulario__submit--registrar" type="submit" value="Registrar Ponente">
     </form>
 
 </div>

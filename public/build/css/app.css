@@ -763,6 +763,7 @@ h3 {
 }
 .dashboard__contenido {
   padding: 1rem 1rem 3rem 1rem;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .dashboard__contenido {

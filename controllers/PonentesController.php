@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Model\Ponente;
 use MVC\Router;
 
 class PonentesController {
@@ -18,9 +19,20 @@ class PonentesController {
 
         $alertas = [];
 
+        $ponente = new Ponente;
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $ponente->sincronizar($_POST);
+
+            //validar
+            $alertas = $ponente->validar();
+            
+        }
+
         $router->render('admin/ponentes/crear', [
             'titulo' => 'Registrar Ponente',
-            'alertas' => $alertas
+            'alertas' => $alertas,
+            'ponente' => $ponente
 
         ]);
     }

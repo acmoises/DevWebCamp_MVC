@@ -12,7 +12,9 @@ class PonentesController {
 
         $ponentes = Ponente::all();
 
-
+        if(!is_admin()){
+            header('Location: /login');
+        }
 
         $router->render('admin/ponentes/index', [
             'titulo' => 'Ponentes / Conferencistas',
@@ -23,11 +25,19 @@ class PonentesController {
 
     public static function crear(Router $router){
 
+        if(!is_admin()){
+            header('Location: /login');
+        }
+
         $alertas = [];
 
         $ponente = new Ponente;
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+            if(!is_admin()){
+                header('Location: /login');
+            }
 
             // Leer imagen
             if(!empty($_FILES['imagen']['tmp_name'])){
@@ -83,6 +93,10 @@ class PonentesController {
     }
 
     public static function editar(Router $router){
+
+        if(!is_admin()){
+            header('Location: /login');
+        }
         
         $alertas = [];
         
@@ -104,6 +118,10 @@ class PonentesController {
         $ponente->imagen_actual = $ponente->imagen; 
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+            if(!is_admin()){
+                header('Location: /login');
+            }
 
             // Leer imagen
             if(!empty($_FILES['imagen']['tmp_name'])){
@@ -162,6 +180,10 @@ class PonentesController {
     public static function eliminar(){
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+            if(!is_admin()){
+                header('Location: /login');
+            }
             
             $id = $_POST['id']; 
 

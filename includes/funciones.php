@@ -21,5 +21,6 @@ function is_auth():bool {
 }
 
 function is_admin():bool {
+    session_start();
     return isset($_SESSION['admin']) && !empty($_SESSION['admin']);
 }

@@ -1,5 +1,5 @@
 <fieldset class="formulario__fieldset" >
-    <legend class="formulario__fieldset">Información Evento</legend>
+    <legend class="formulario__legend">Información Evento</legend>
 
     <div class="formulario__campo">
         <label for="nombre" class="formulario__label">Nombre Evento</label>
@@ -59,5 +59,28 @@
             <?php } ?>
         </ul>
     </div>
+</fieldset>
 
+<fieldset class="formulario__fieldset">
+    <legend class="formulario__legend">Información Extra</legend>
+
+    <div class="formulario__campo">
+        <label for="ponentes" class="formulario__label">Ponentes</label>
+        <input
+            type="text"
+            class="formulario__input"
+            id="ponentes"
+            placeholder="Buscar Ponente"
+        >
+    </div>
+    <div class="formulario__campo">
+        <label for="disponibles" class="formulario__label">Lugares Disponibles</label>
+        <input
+            type="number"
+            class="formulario__input"
+            id="disponibles"
+            name="disponibles"
+            placeholder="Ej. 20"
+        >
+    </div>
 </fieldset>

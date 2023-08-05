@@ -8,6 +8,6 @@ class Dia extends ActiveRecord {
     protected static $columnasDB = ['id', 'nombre'];
 
     public $id;
-    public$nombre;
+    public $nombre;
 
 }

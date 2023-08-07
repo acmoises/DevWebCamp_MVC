@@ -21,7 +21,7 @@
             name="descripcion"
             placeholder="Descripción Evento"
             rows="5"
-        >value="<?php echo $evento->descripcion; ?>"</textarea>
+        ><?php echo $evento->descripcion; ?></textarea>
     </div>
     <div class="formulario__campo">
         <label for="descripcion" class="formulario__label">Categoria o Tipo de Evento</label>
@@ -51,10 +51,11 @@
                 </div>
             <?php } ?>
         </div>
+        <input type="hidden" name="dia_id" value="">
     </div>
     <div id="horas" class="formulario__campo">
         <label for="" class="formulario__label">Seleccionar Hora</label>
-        <ul class="horas">
+        <ul id="horas" class="horas">
             <?php foreach($horas as $hora){ ?>
                 <li class="horas__hora"><?php echo $hora->hora; ?></li>
             <?php } ?>

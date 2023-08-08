@@ -57,9 +57,10 @@
         <label for="" class="formulario__label">Seleccionar Hora</label>
         <ul id="horas" class="horas">
             <?php foreach($horas as $hora){ ?>
-                <li class="horas__hora"><?php echo $hora->hora; ?></li>
+                <li data-hora-id="<?php echo $hora->id; ?>" class="horas__hora"><?php echo $hora->hora; ?></li>
             <?php } ?>
         </ul>
+        <input type="hidden" name="hora_id" value="">
     </div>
 </fieldset>
 

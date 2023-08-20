@@ -7,6 +7,7 @@ use Model\Categoria;
 use Model\Dia;
 use Model\Hora;
 use Model\Evento;
+use Model\Ponente;
 use MVC\Router;
 
 class EventosController {
@@ -33,6 +34,9 @@ class EventosController {
         // Esto funciona como un inner join 
         foreach($eventos as $evento){
             $evento->categoria = Categoria::find($evento->categoria_id);
+            $evento->dia = Dia::find($evento->dia_id);
+            $evento->hora = Hora::find($evento->hora_id);
+            $evento->ponente = Ponente::find($evento->ponente_id);
         }
 
         if(!is_admin()){

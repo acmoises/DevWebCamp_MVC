@@ -26,7 +26,7 @@
                             <?php echo $evento->nombre; ?>
                         </td>
                         <td class="table__td">
-                            <?php echo $evento->categoria_id; ?>
+                            <?php echo $evento->categoria->nombre; ?>
                         </td>
                     </tr>
                 <?php } ?>

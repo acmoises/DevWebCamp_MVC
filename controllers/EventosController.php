@@ -30,6 +30,11 @@ class EventosController {
 
         $eventos = Evento::paginar($registros_por_pagina, $paginacion->offset());
 
+        // Esto funciona como un inner join 
+        foreach($eventos as $evento){
+            $evento->categoria = Categoria::find($evento->categoria_id);
+        }
+
         if(!is_admin()){
             header('Location: /login');
         }

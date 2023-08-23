@@ -53,6 +53,10 @@ class EventosController {
 
     public static function crear(Router $router){
 
+        if(!is_admin()){
+            header('Location: /login');
+        }
+
         $alertas = [];
 
         $categorias = Categoria::all('ASC');
@@ -85,6 +89,10 @@ class EventosController {
     }
 
     public static function editar(Router $router){
+
+        if(!is_admin()){
+            header('Location: /login');
+        }
 
         $alertas = [];
 
@@ -126,5 +134,30 @@ class EventosController {
             'horas' => $horas,
             'evento' => $evento
         ]);
+    }
+
+    public static function eliminar(){
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+            if(!is_admin()){
+                header('Location: /login');
+            }
+            
+            $id = $_POST['id']; 
+
+            $evento = Evento::find($id);
+
+            if(isset($evento)){
+                header('Location: /admin/eventos');
+            }
+
+            $resultado = $evento->eliminar();
+
+            if($resultado){
+                header('Location: /admin/eventos');
+            }
+        }
+
     }
 }

@@ -10,14 +10,14 @@
                     <p class="evento__hora"><?php echo $evento->hora->hora; ?></p>
                     <div class="evento__informacion">
                         <h4 class="evento__nombre"><?php echo $evento->nombre; ?></h4>
-                         <div>
-                            <p class="evento__informacion"><?php echo $evento->descripcion; ?></p>
-                         </div>
+                        
+                        <p class="evento__introduccion"><?php echo $evento->descripcion; ?></p>
+                         
                          <div class="evento__autor-info">
                             <picture>
                                 <source srcset="<?php echo $_ENV['HOST'] . '/img/speakers/' . $evento->ponente->imagen; ?>.webp" type="image/webp">
                                 <source srcset="<?php echo $_ENV['HOST'] . '/img/speakers/' . $evento->ponente->imagen; ?>.png" type="image/png">
-                                <img src="<?php echo $_ENV['HOST'] . '/img/speakers/' . $evento->ponente->imagen; ?>.png" alt="Imagen Evento">
+                                <img class="evento__imagen-autor" loading="lazy" width="200" height="300" src="<?php echo $_ENV['HOST'] . '/img/speakers/' . $evento->ponente->imagen; ?>.png" alt="Imagen Evento">
                             </picture>
                             <p class="evento__autor-nombre"><?php echo $evento->ponente->nombre . " " . $evento->ponente->apellido; ?></p>
                          </div>

@@ -96,3 +96,5 @@ include_once __DIR__ . '/conferencias.php';
         <?php } ?>
     </div>
 </section>
+
+<div id="mapa" class="mapa"></div>

@@ -11,6 +11,17 @@ class RegistroController {
 
     public static function crear(Router $router){
 
+        if(!is_auth()){
+            header('Location: /');
+        }
+
+        // Verificar si el usuario ya esta registrado
+        $registro = Registro::where('usuario_id', $_SESSION['id']);
+
+        if(isset($registro) && $registro->paquete_id === "3"){
+            header('Location: /boleto?id=' . urlencode($registro->token) );
+        }
+
         $router->render('registro/crear', [
             'titulo' => 'Finalizar Registro'
         ]);
@@ -24,6 +35,14 @@ class RegistroController {
             if(!is_auth()){
                 header('Location: /login');
             }
+
+            // Verificar si el usuario ya esta registrado
+            $registro = Registro::where('usuario_id', $_SESSION['id']);
+
+            if(isset($registro) && $registro->paquete_id === "3"){
+                header('Location: /boleto?id=' . urlencode($registro->token) );
+            }
+
 
             $token = substr( md5( uniqid( rand(), true ) ), 0, 8 );
 

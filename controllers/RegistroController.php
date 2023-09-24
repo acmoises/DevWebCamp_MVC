@@ -191,17 +191,23 @@ class RegistroController {
                 return;
             }
             
+            $eventos_array = [];
+
             // Validar la disponibiliodad de los eventos seleccionados
             foreach($eventos as $evento_id){
                 $evento = Evento::find($evento_id);
-                
                 // Comprobar que el evento exista
                 if(!isset($evento) || $evento->disponible === "0"){
                     echo json_encode(['resultado' => false]);
                     return;
                 }
-                
-                
+
+                $eventos_array[] = $evento; 
+            }
+
+            foreach($eventos_array as $evento){
+                $evento->disponibles -= 1;
+                $evento->guardar();
             }
         }
 

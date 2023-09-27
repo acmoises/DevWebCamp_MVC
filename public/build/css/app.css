@@ -1578,13 +1578,18 @@ h3 {
   width: min(95%, 140rem);
   margin: 0 auto;
 }
-.bloques__gird {
+@media (min-width: 768px) {
+  .bloques {
+    margin-top: 10rem;
+  }
+}
+.bloques__grid {
   display: grid;
   gap: 3rem;
   grid-template-columns: repeat(1, 1fr);
 }
 @media (min-width: 1024px) {
-  .bloques__gird {
+  .bloques__grid {
     display: grid;
     gap: 3rem;
     grid-template-columns: repeat(2, 1fr);
@@ -1592,6 +1597,7 @@ h3 {
 }
 
 .bloque {
+  margin-bottom: 5rem;
   padding: 2rem;
   color: #FFFFFF;
   border-radius: 1rem;
@@ -1599,12 +1605,21 @@ h3 {
 .bloque:nth-child(1) {
   background-image: linear-gradient(to left top, #f97316, #fba061);
 }
+.bloque:nth-child(2) {
+  background-image: linear-gradient(to left top, #a855f7, #cd9efa);
+}
 .bloque__heading {
   margin: 1rem 0 2rem 0;
   font-size: 4rem;
 }
 .bloque__texto {
-  margin: 0;
+  margin: 1rem 0;
+}
+.bloque__texto--cantidad {
+  margin-top: 5rem;
+  font-weight: 900;
+  font-size: 6rem;
+  text-align: center;
 }
 
 .eventos-registro {
